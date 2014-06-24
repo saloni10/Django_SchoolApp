@@ -1,14 +1,18 @@
 <html>
-<head> <title> display </title>
+<head> <title> display </title> 
+<style>
+.else { color : red ; }
+h2, .else { text-align :center; margin-top:5%; }
+</style>
 </head>
 <body>
-{% if error %}
-<p color="red"> Please select atleast one field </p>
-{% endif %} 
-You selected for :
+<h2>You selected for : {{ else }}
 {% for i in info %}
 <p> {{ i }} </p>
-{% endfor %}
+{% endfor %} </h2>
+{% if error %}
+<h3 class="else"> Please select atleast one field </h3>
+{% endif %}
 
 </body>
 </html>
