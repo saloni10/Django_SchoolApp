@@ -6,7 +6,9 @@
 <p color="red"> Please select atleast one field </p>
 {% endif %} 
 You selected for :
-<p>{{ info }}</p>
-<p> </p>
+{% for i in info %}
+<p> {{ i }} </p>
+{% endfor %}
+
 </body>
 </html>
