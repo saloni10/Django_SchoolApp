@@ -24,7 +24,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-TEMPLATE_DIRS = ('/home/saloni/school/info/template',)
+TEMPLATE_DIRS = ('/home/saloni/school/info/template','/home/saloni/school/alt_info/template',)
 ALLOWED_HOSTS = []
 
 

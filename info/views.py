@@ -7,17 +7,23 @@ def index(request):
 
 
 def display(request):
- #  error= False
-   if 'info' in request.GET:
+    
+    results=[]
+    avail_list = ['name','roll_no','branch','session','marks','backlog']
+    if 'info' in request.GET:
        info = request.GET.getlist('info')
-     #  if not info:
-     #      error = True
-     #  else:
-       return render(request, 'display.html', { 'info': info })
- #  return render(request, 'display.html', {'error':error})
-   else:
-       a = 'nothing'
-       return render(request, 'display.html', {'error': True, 'else':a})
+       for i in avail_list :
+          if i in info :
+            obj= Student.objects.values(i) 
+            results.append(obj)  
+             
+     
+       return render(request, 'display.html', {'info': info, 'results':results })
+ 
+    
+    else:
+       
+       return render(request, 'display.html', {'error': True, 'nothing': nothing})
    
 
 
